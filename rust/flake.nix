@@ -16,11 +16,13 @@
       (system:
         let
           pkgs = nixpkgs.legacyPackages."${system}";
-          # XXX: Change this to target platform
+          # XXX: Change target platform
           rust-target = "x86_64-unknown-linux-musl";
           rust-toolchain = with fenix.packages."${system}"; let
             rust-toolchain-spec = {
-              # XXX: Change this to desired Rust version
+              # XXX: Change compiler version
+              # see `toolchainOf` https://github.com/nix-community/fenix
+              # for supported options
               channel = "1.60";
               sha256 = "sha256-otgm+7nEl94JG/B+TYhWseZsHV1voGcBsW/lOD2/68g=";
             };
@@ -57,5 +59,6 @@
             RUST_BACKTRACE = 1;
             CARGO_BUILD_TARGET = rust-target;
           };
+          devShell = self.devShells."${system}".default;
         });
 }

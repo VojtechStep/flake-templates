@@ -15,7 +15,8 @@
         rust = {
           path = ./rust;
           description = "Template for rust projects. Easy changing of compiler versions and target platforms.";
-          welcomeText = welcome "cargo init";
+          welcomeText = welcome "cargo init"
+            + "Use cargo to manage dependencies.";
         };
         zig = {
           path = ./zig;
@@ -26,7 +27,8 @@
           # TODO: switch to ghc922 after NixOS 22.05
           path = ./haskell;
           description = "Template for haskell projects. Easy changing of compiler versions.";
-          welcomeText = welcome "cabal init -m --simple";
+          welcomeText = welcome "cabal init -m --simple"
+            + "Use nix or cabal to manage dependencies.";
         };
         coq = {
           # TODO: Figure out how to structure Coq packages with dune,
@@ -34,6 +36,12 @@
           path = ./coq;
           description = "Template for coq projects. Easy changing of compiler versions.";
           welcomeText = welcome ''echo "-Q . <project_namespace>" >> _CoqProject'';
+        };
+        agda = {
+          path = ./agda;
+          description = "Template for agda projects.";
+          welcomeText = welcome ''echo -e "name: <project_name>\\ninclude: .\\ndepend: \\n"''
+            + "Use nix to manage dependencies.";
         };
       };
     };

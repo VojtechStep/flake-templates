@@ -22,6 +22,11 @@
           description = "Template for zig projects. Easy changing of compiler versions.";
           welcomeText = welcome "zig init-exe";
         };
+        haskell = {
+          path = ./haskell;
+          description = "Template for haskell projects. Easy changing of compiler versions.";
+          welcomeText = welcome "cabal init -m --simple";
+        };
       };
     };
 }

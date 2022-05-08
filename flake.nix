@@ -23,9 +23,17 @@
           welcomeText = welcome "zig init-exe";
         };
         haskell = {
+          # TODO: switch to ghc922 after NixOS 22.05
           path = ./haskell;
           description = "Template for haskell projects. Easy changing of compiler versions.";
           welcomeText = welcome "cabal init -m --simple";
+        };
+        coq = {
+          # TODO: Figure out how to structure Coq packages with dune,
+          #       make a Dune template
+          path = ./coq;
+          description = "Template for coq projects. Easy changing of compiler versions.";
+          welcomeText = welcome ''echo "-Q . <project_namespace>" >> _CoqProject'';
         };
       };
     };

@@ -17,7 +17,6 @@
           # by the pre-built HLS binaries - these are listed
           # as `supportedGhcVersions` in
           # https://github.com/NixOS/nixpkgs/blob/nixos-21.11/pkgs/development/tools/haskell/haskell-language-server/withWrapper.nix
-          # TODO: switch to ghc922 after NixOS 22.05
           haskell = pkgs.haskell.packages.ghc8107.ghcWithPackages (p: with p;[
             # XXX: Add packages you want
             # To make them available from `cabal repl` and other tooling, you must also

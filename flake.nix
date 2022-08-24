@@ -43,6 +43,11 @@
           welcomeText = welcome ''echo -e "name: <project_name>\\ninclude: .\\ndepend: \\n"''
             + "Use nix to manage dependencies.";
         };
+        typescript = {
+          path = ./typescript;
+          description = "Template for TypeScript projects.";
+          welcomeText = welcome "yarn init && tsc --init";
+        };
       };
     };
 }
